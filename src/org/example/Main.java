@@ -11,8 +11,8 @@ public class Main {
 
     public static void printStudents(List<String[]> values) {
         var students = Parser.parseStudents(values);
-        for(var student : students) {
-            System.out.println(student.toString());
+        for (var student : students) {
+            System.out.println(student);
         }
     }
 }

@@ -1,7 +1,6 @@
 package org.example;
 
 import com.opencsv.exceptions.CsvException;
-import org.example.Models.Topic;
 import org.example.Models.*;
 import com.opencsv.*;
 import java.nio.charset.StandardCharsets;
@@ -14,7 +13,7 @@ public class Parser {
                 .withSeparator(';')
                 .build();
         try (var reader = new CSVReaderBuilder(
-                new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) // Добавлена кодировка UTF-8
+                new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) // Кодировка UTF-8
                 .withCSVParser(parser)
                 .build()) {
             return reader.readAll();
@@ -68,4 +67,6 @@ public class Parser {
         return topics;
     }
 }
+
+
 

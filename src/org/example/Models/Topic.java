@@ -6,32 +6,39 @@ public class Topic {
     private final String title;
     private final ArrayList<Task> tasks;
 
-    public Topic(String title, ArrayList<Task> tasks){
+    public Topic(String title, ArrayList<Task> tasks) {
         this.title = title;
         this.tasks = tasks;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public ArrayList<Task> getTasks(){
+    public ArrayList<Task> getTasks() {
         return tasks;
     }
 
-    public String toString(){
-        return String.format(""" 
-                        TITLE: %s;
-                        POINTS_COUNT: %s
-                        TASKS: %s
-                        """, title, getPoints(), tasks);
-    }
-
-    public int getPoints(){
+    public int getPoints() {
         var sum = 0;
-        for(var task : tasks){
+        for (var task : tasks) {
             sum += task.getMaxPointsCount();
         }
         return sum;
     }
+
+    @Override
+    public String toString() {
+        var tasksBuilder = new StringBuilder();
+        for (var task : tasks) {
+            tasksBuilder.append(task.toString()).append("\n");
+        }
+
+        return String.format("""
+                , TITLE: %s
+                POINTS_COUNT: %d
+                TASKS: [%s]
+                """, title, getPoints(), tasksBuilder.toString().trim());
+    }
 }
+

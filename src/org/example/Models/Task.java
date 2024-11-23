@@ -5,25 +5,26 @@ public class Task {
     private final TasksTypes type;
     private final int maxPointsCount;
 
-    public Task(String title, TasksTypes type, int maxPointsCount){
+    public Task(String title, TasksTypes type, int maxPointsCount) {
         this.title = title;
         this.type = type;
         this.maxPointsCount = maxPointsCount;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public TasksTypes getType(){
+    public TasksTypes getType() {
         return type;
     }
 
-    public int getMaxPointsCount(){
+    public int getMaxPointsCount() {
         return maxPointsCount;
     }
 
-    public String toString(){
+    @Override
+    public String toString() {
         return String.format("""
                 TITLE: %s
                 TYPE: %s
@@ -31,3 +32,4 @@ public class Task {
                 """, title, type, maxPointsCount);
     }
 }
+
