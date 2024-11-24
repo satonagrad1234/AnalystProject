@@ -9,11 +9,9 @@ import java.io.*;
 
 public class Parser {
     public static List<String[]> readCSVFile(String file) {
-        // Устанавливаем кодировку вывода консоли в UTF-8
         System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
-
         var parser = new CSVParserBuilder()
-                .withSeparator(';') // Указываем разделитель для CSV файла
+                .withSeparator(';')
                 .build();
         try (var reader = new CSVReaderBuilder(
                 new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) // Кодировка UTF-8
@@ -70,6 +68,7 @@ public class Parser {
         return topics;
     }
 }
+
 
 
 

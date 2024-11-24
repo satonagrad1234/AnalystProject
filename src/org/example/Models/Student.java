@@ -36,9 +36,9 @@ public class Student {
 
         return String.format("""
                 NAME: %s
-                GROUP:%s
-                POINTS:%s
-                MODULES_FOR_STUDENT:%s
+                GROUP: %s
+                POINTS: %d
+                MODULES FOR STUDENT: %s
                 """, name, group, pointsCount, topicsBuilder.toString().trim());
     }
 }
