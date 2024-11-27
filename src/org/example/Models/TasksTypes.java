@@ -1,7 +1,7 @@
-package Models;
+package org.example.Models;
 
 public enum TasksTypes {
-    exercize,
+    exercise,
     practice,
     quiz,
     activities
