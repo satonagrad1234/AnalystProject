@@ -25,11 +25,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return String.format("""
-                TITLE: %s
-                TYPE: %s
-                MAX POINTS: %d
-                """, title, type, maxPointsCount);
+        return String.format("TITLE: %s; TYPE: %s; MAX POINTS: %d", title, type, maxPointsCount);
     }
 }
 

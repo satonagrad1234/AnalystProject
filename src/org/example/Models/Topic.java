@@ -31,13 +31,10 @@ public class Topic {
     public String toString() {
         var tasksBuilder = new StringBuilder();
         for (var task : tasks) {
-            tasksBuilder.append(task.toString()).append("\n");
+            tasksBuilder.append("TASKS: ").append(task.toString()).append("\n");
         }
-
         return String.format("""
-                , TITLE: %s
-                POINTS_COUNT: %d
-                TASKS: [%s]
+                TITLE: %s; POINTS_COUNT: %d; %s
                 """, title, getPoints(), tasksBuilder.toString().trim());
     }
 }
